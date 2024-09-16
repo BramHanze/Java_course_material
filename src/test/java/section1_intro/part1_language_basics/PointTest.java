@@ -53,5 +53,4 @@ public class PointTest {
 
         assertEquals(Math.sqrt(8), p2.euclideanDistanceTo(p1));
     }
-
 }

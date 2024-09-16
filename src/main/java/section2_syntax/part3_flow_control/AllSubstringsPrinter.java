@@ -25,7 +25,10 @@ public class AllSubstringsPrinter {
      * @param stringToSubstring the string to substring
      */
     public void printSubstringsLeftAlignedLeftTruncated(String stringToSubstring) {
-        //YOUR CODE
+        String word = stringToSubstring;
+        for (int i = 0; i < word.length(); i++) {
+            System.out.println(word.substring(i, word.length()));
+        }
     }
 
     /**
@@ -35,7 +38,33 @@ public class AllSubstringsPrinter {
      * @param leftAligned flag to indicate whether the substrings should be printed left-aligned (or right-aligned)
      */
     public void printAllSubstrings(String stringToSubstring, boolean leftTruncated, boolean leftAligned) {
-        //YOUR CODE
+        String word = stringToSubstring;
+        if (leftTruncated) {
+            if (leftAligned) {
+                for (int i = 0; i < word.length(); i++) {
+                    System.out.println(word.substring(i, word.length()));
+                }
+            }
+            else {
+                for (int i = 0; i < word.length(); i++) {
+                    int n = i;
+                System.out.println(" ".repeat(n) + word.substring(i, word.length()));
+                }
+            }
+        }
+        if (!leftTruncated) {
+            if (leftAligned) {
+                for (int i = word.length(); i > 0; i--) {
+                    System.out.println(word.substring(0, i));
+                }
+            }
+            else {
+                for (int i = word.length(); i > 0; i--) {
+                    int n = word.length() - i;
+                    System.out.println(" ".repeat(n) + word.substring(0, i));
+                }
+            }
+        }
     }
 
     /**

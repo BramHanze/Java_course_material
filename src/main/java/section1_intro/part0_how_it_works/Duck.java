@@ -9,4 +9,8 @@ package section1_intro.part0_how_it_works;
 public class Duck {
     public int swimSpeed;
     public String name;
+
+    public String toString(){
+        return "Duck [name=" + name + "; speed=" + swimSpeed + "]";
+    }
 }

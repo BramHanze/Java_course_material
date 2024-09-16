@@ -9,8 +9,11 @@ public class LanguageBasics {
      * @param y
      * @return multiple
      */
+
+
     public boolean isMultiple(int x, int y) {
-        return true;
+        if (x%y == 0) return true;
+        else return false;
     }
 
     /**
@@ -22,7 +25,7 @@ public class LanguageBasics {
      * @return
      */
     public double getDistanceInMeters(double speedInKmPerHour, double elapsedTimeInMinutes) {
-        return 0;
+        return (speedInKmPerHour*1000) * (elapsedTimeInMinutes/60);
     }
 
     /**
@@ -36,11 +39,11 @@ public class LanguageBasics {
     public int getCumulativeSum(int n) {
         //WHAT VALUE DOES i NEED TO HAVE AT THE START?
         //for sure not Integer.MAX_VALUE
-        for (int i = Integer.MAX_VALUE; i < n; i++) {
-            //YOUR CODE HERE
-
+        int sum = 0;
+        for (int i = n; i >= 0; i--) {
+            sum += i;
         }
-        return 0;
+        return sum;
     }
 
     /**
@@ -51,8 +54,8 @@ public class LanguageBasics {
      * @return number^absolute(powerUp)
      */
     public double getTheAbsolutePower(int number, int powerUp) {
-        //YOUR CODE HERE
-        return 0;
+
+        return Math.pow(number, Math.abs(powerUp));
     }
 
     /**
@@ -61,13 +64,23 @@ public class LanguageBasics {
      * Return the one that is correctly named (the value of the variable is irrelevant!).
      * @return correctVariable
      */
+
     public String returnCorrectlyNamedVariable_1() {
         String NameOfKing = "Willem Alexander";
         String name_of_king = "George IV";
         String nameOfKing = "Louis XIV, le Roi Soleil";
         String Name_Of_King = "Franz II";
 
-        //return the correct variable
+        String[] names = {"NameOfKing", "name_of_king", "nameOfKing", "Name_Of_King"};
+        String[] truenames = {"Willem Alexander", "George IV", "Louis XIV, le Roi Soleil", "Franz II"};
+        String out;
+        for (int i = 0; i < names.length; i++) {
+            String henk = "i";
+            if (Character.isLowerCase(names[i].charAt(0)) && !names[i].contains("_")) {
+                return truenames[i];
+            }
+        }
+
         return null;
     }
 
@@ -77,7 +90,15 @@ public class LanguageBasics {
         String score_Board = "C";
         String scoreBoard = "D";
 
-        //return the correct variable
+        String[] names = {"score_board", "Scoreboard", "score_Board", "scoreBoard"};
+        String[] truenames = {"A", "B", "C", "D"};
+        String out;
+        for (int i = 0; i < names.length; i++) {
+            String henk = "i";
+            if (Character.isLowerCase(names[i].charAt(0)) && !names[i].contains("_")) {
+                return truenames[i];
+            }
+        }
         return null;
     }
 
@@ -87,7 +108,15 @@ public class LanguageBasics {
         String DnaTranslator = "C";
         String DNA_translator = "D";
 
-        //return the correct variable
+        String[] names = {"DNAtranslator", "dnaTranslator", "DnaTranslator", "DNA_translator"};
+        String[] truenames = {"A", "B", "C", "D"};
+        String out;
+        for (int i = 0; i < names.length; i++) {
+            String henk = "i";
+            if (Character.isLowerCase(names[i].charAt(0)) && !names[i].contains("_")) {
+                return truenames[i];
+            }
+        }
         return null;
     }
 

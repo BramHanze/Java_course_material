@@ -1,5 +1,7 @@
 package section1_intro.part0_how_it_works;
 
+import java.text.DecimalFormat;
+
 /**
  * Creation date: Jun 26, 2017
  *
@@ -25,7 +27,7 @@ public class StartingJava {
      */
     public void printHelloUser() {
         String user = System.getProperty("user.name");
-        System.out.print("Hello," + user + "!");
+        System.out.print("Hello, " + user + "!");
     }
 
     /**
@@ -35,10 +37,11 @@ public class StartingJava {
      * @return sum the sum of x and y
      */
     public int addInts(int x, int y) {
+        int sum = x + y;
         /*PUT YOUR CODE HERE
          and replace the zero in the return statement (return 0;)
          with your own value.*/
-        return 0;
+        return sum;
     }
 
     /**
@@ -51,7 +54,9 @@ public class StartingJava {
      */
     public double calculateSpeed(double distanceInMeters, double timeInSeconds) {
         //YOUR CODE HERE
-        return 0;
+        double speed = distanceInMeters / timeInSeconds * 3.6;
+        speed = Math.round(speed);
+        return speed;
     }
 
     /**
@@ -65,8 +70,8 @@ public class StartingJava {
      * @return dividedAndRounded
      */
     public long divideAndRound(double x, double y) {
-        //YOUR CODE
-        return 0;
+        long some = Math.round(x / y);
+        return some;
     }
 
     /**
@@ -77,8 +82,8 @@ public class StartingJava {
      * @return greeting
      */
     public String getGreeting(int index) {
-        //YOUR CODE
-        return "";
+        String greeting = GREETINGS[index];
+        return greeting;
     }
 
     //This is a constant - an array of Strings used for the getGreeting() method
@@ -99,8 +104,11 @@ public class StartingJava {
      * @return duck a Duck instance
      */
     public Duck createDuck(int swimSpeed, String nameOfDuck) {
-        //YOUR CODE
-        return null;
+        Duck duck = new Duck();
+        System.out.println("duck = " + duck);
+        duck.swimSpeed = swimSpeed;
+        duck.name = nameOfDuck;
+        return duck;
     }
 
 }

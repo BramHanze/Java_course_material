@@ -65,5 +65,4 @@ class LanguageBasicsTest {
         String value = this.languageBasics.returnCorrectlyNamedVariable_3();
         assertThat(value).isEqualTo("B");
     }
-
 }
