@@ -35,7 +35,7 @@ public class BmiCalculator {
         double userWeight = bc.getUserWeight();
         double userBMI = bc.calculateBMI(userWeight, userHeigth);
         String label = bc.getMessage(userBMI);
-
+        System.out.println(label);
         //YOUR CODE HERE
         //generate output to user
         
@@ -48,7 +48,7 @@ public class BmiCalculator {
     public double getUserHeight() {
         System.out.print("Please give your height, in meters (e.g. 1.84): ");
         String input = keyboard.nextLine();
-        double height = 0;
+        double height = getUserHeight();
         try {
             height = Double.parseDouble(input);
         } catch (NumberFormatException ex) {
@@ -59,13 +59,22 @@ public class BmiCalculator {
     }
 
     /**
-     * fetches the height of the user.
-     * @return height the height in meters
+     * fetches the weight of the user.
+     * @return weight the weight in kilograms
      */
     public double getUserWeight() {
-        //YOUR CODE HERE (and remove the throw statement)
-        throw new UnsupportedOperationException("Not implemented yet");
+        System.out.print("Please give your weight, in kilograms (e.g. 85): ");
+        String input = keyboard.nextLine();
+        double weight = getUserWeight();
+        try {
+            weight = Double.parseDouble(input);
+        } catch (NumberFormatException ex) {
+            System.out.println("This is no number! aborting...");
+            System.exit(0);
+        }
+        return weight;
     }
+
     
     /**
      * Returns the BMI given a weight in kilograms and a height in meters.
@@ -83,7 +92,7 @@ public class BmiCalculator {
         }
         //YOUR CODE HERE (and remove the throw statement)
         //Gewicht in kilogram / (Lengte in meter * Lengte in meter)
-        throw new UnsupportedOperationException("Not implemented yet");
+        return weight / (height * height);
     }
 
     /**
@@ -100,6 +109,23 @@ public class BmiCalculator {
      */
     public String getMessage(double bmi) {
         //YOUR CODE HERE (and remove the throw statement)
-        throw new UnsupportedOperationException("Not implemented yet");
+        if (bmi <=0){
+            throw new IllegalArgumentException("Error: bmi should be above 0. Given: " + bmi);
+        }
+        else if (bmi <= 18.5){
+            return "Ondergewicht";
+        }
+        else if (bmi <= 25){
+            return "Gezond gewicht";
+        }
+        else if (bmi <= 30){
+            return "Overgewicht";
+        }
+        else if (bmi <= 40){
+            return "Obesitas";
+        }
+        else {
+            return "Morbide Obesitas";
+        }
     }
 }
