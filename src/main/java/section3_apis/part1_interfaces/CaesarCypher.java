@@ -4,13 +4,46 @@ public class CaesarCypher implements EncryptionEngine {
 
     @Override
     public String encrypt(String message) {
-        //YOUR CODE HERE (and remove the throw statement)
-        throw new UnsupportedOperationException("Not implemented yet");
+        String output = "";
+        for (char ch : message.toCharArray()) {
+            boolean isUpperCase = Character.isUpperCase(ch);
+            ch = Character.toLowerCase(ch);
+
+            if (!Character.isLetter(ch)) {
+                output += ch;
+                continue;
+            }
+            int pos = (ch - 'a' + 1 + 22) % 26;
+            char newChar = (char)(pos + 'a');
+
+            if (isUpperCase) {
+                newChar = Character.toUpperCase(newChar);
+            }
+            output += newChar;
+        }
+            return output;
     }
 
     @Override
     public String decrypt(String encryptedMessage) {
-        //YOUR CODE HERE (and remove the throw statement)
-        throw new UnsupportedOperationException("Not implemented yet");
+        String output = "";
+        for (char ch : encryptedMessage.toCharArray()) {
+            boolean isUpperCase = Character.isUpperCase(ch);
+            ch = Character.toLowerCase(ch);
+
+            if (!Character.isLetter(ch)) {
+                output += ch;
+                continue;
+            }
+            int pos = (ch - 'a' + 1 + 2) % 26;
+            char newChar = (char)(pos + 'a');
+
+            if (isUpperCase) {
+                newChar = Character.toUpperCase(newChar);
+            }
+            output += newChar;
+        }
+        return output;
     }
 }
+
